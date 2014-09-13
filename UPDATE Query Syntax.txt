@@ -1,0 +1,14 @@
+'test
+Private Sub updateFunction_updateQuery()
+    Dim sql As String
+    Call open_mdb
+    With con
+        sql = "UPDATE GPS_Processed_" & surveyid & " SET GPS_Processed_" & surveyid & ".SURVEY_ID=" & "'" & surveyid & "'" & ""
+        MsgBox sql, vbInformation, "Message"
+        .Execute sql
+        
+        'working update query
+        '.Execute "UPDATE GPS_Processed_01_07A_41B_CL SET GPS_Processed_01_07A_41B_CL.SURVEY_ID = '01_07A_41B_CL'"
+    End With
+    Call close_mdb
+End Sub
